@@ -1,6 +1,8 @@
 {
     "name": "seblhaire/menuandtabutils",
+    "description": "A Laravel library to to build menus and tabs navigation utilities, based on Boostrap 5 CSS Framework.",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Sébastien L'haire",
