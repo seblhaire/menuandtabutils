@@ -23,7 +23,7 @@
           ],
           "aliases": {
               "MenuUtils": "Seblhaire\\MenuAndTabUtils\\MenuUtils",
-              "TabUtils" : "Seblhaire\\MenuAndTabUtils\\TabUtils",
+              "TabUtils" : "Seblhaire\\MenuAndTabUtils\\TabUtils"
           }
         }
     }
