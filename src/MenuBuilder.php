@@ -70,7 +70,7 @@ class MenuBuilder{
          if (isset($item['icon'])){
            $result .= ' title="' . $item['title']. '"';
          }
-         if (isset($item['attributes'])){
+         if (isset($item['attributes']) && count($item['attributes']) > 0){
            foreach ($item['attributes'] as $key => $value){
              $result .= ' ' . $key . '="' . $value . '"';
            }
@@ -95,14 +95,11 @@ class MenuBuilder{
             }
             $result .='>' . PHP_EOL;
             $result .= '<a id="' . $idx2 . '-link" class="' . $this->data['dropitem'] . '"';
-            if (strpos($item2['target'], 'https') !== false){
-              $result .= ' target="_blank" rel="noopener noreferrer"';
-            }
             $result .= ' href="' . $item2['target'] . '"';
             if (isset($item2['icon'])){
               $result .= ' title="' . $item2['title'] . '"';
             }
-            if (isset($item2['attributes'])){
+            if (isset($item2['attributes']) && count($item2['attributes']) > 0){
               foreach ($item2['attributes'] as $key => $value){
                 $result .= ' ' . $key . '="' . $value . '"';
               }
@@ -130,14 +127,11 @@ class MenuBuilder{
         }else{
           $result .= '<a id="' . $idx . '-link" class="' . $this->data['aclass'] .'"';
         }
-        if (strpos($item['target'], 'https') !== false){
-          $result .= ' target="_blank" rel="noopener noreferrer"';
-        }
         $result .= ' href="' . $item['target'] .'"';
         if (isset($item['icon'])){
           $result .= ' title="' . $item['title']. '"';
         }
-        if (isset($item['attributes'])){
+        if (isset($item['attributes'])  && count($item['attributes']) > 0){
           foreach ($item['attributes'] as $key => $value){
             $result .= ' ' . $key . '="' . $value . '"';
           }
