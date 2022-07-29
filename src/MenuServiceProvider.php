@@ -30,6 +30,10 @@ class MenuServiceProvider extends ServiceProvider{
   }
 
   public function provides() {
-      return [MenuServiceContract::class, TabServiceContract::class];
+      return [
+        MenuServiceContract::class,
+        TabServiceContract::class,
+        BreadcrumbServiceContract::class
+      ];
   }
 }
