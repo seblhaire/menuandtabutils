@@ -54,7 +54,7 @@ class BreadcrumbBuilder{
       }
     }
     $result .= '>'. PHP_EOL;
-    $i = 1:
+    $i = 1;
     foreach ($this->data['menu'] as $idx => $item){
       if ($i == count($this->data['menu'])){
         $result .= '<li id="' . $idx . '" class="' . $this->data['liclass'] . ' active" aria-current="page"';
