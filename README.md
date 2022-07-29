@@ -140,6 +140,74 @@ And in your Blade template, insert your variable at the appropriate line:
 
 A page can have several menus. In this case, assign each menu to a different variable.
 
+# BreadcrumbUtils
+
+```php
+BreadcrumbUtils::init(string $id, array $data)
+```
+This simple helper assigns a `<nav aria-label="breadcrumb">` menu to a variable.
+## Parameters:
+* `id`: id of main nav
+* `data`: array parameter. Content:
+  * `menu`: **mandatory** array of value to build menu items. Cf below.
+	* `navclass`: class of nav element `<nav>`. Default: ''.
+	* `navattr`:  array of key-attributes values for `<nav>`. Default:  `['aria-label' => "breadcrumb"]`.
+	* `olclass`:  class of list `<ol>`. Default: `breadcrumb`.
+	* `olattr`: array of key-value pairs for element `<ol>`. Default: empty array.
+	* `liclass`: class of list element `<li>`. Default: `breadcrumb-item`.
+	* `liattr`: array of key-value pairs for element `<li>`. Default: empty array.
+	* `active`: class of current item. Default: `"active"`.
+
+## Define menu elements
+
+Here are the details to build your navigation menu in `menu` parameter.
+
+```
+$element = BreadcrumbUtils::init('breadcrumb-nav', //main nav id
+[
+  'menu' => [
+    'link-9' => [
+      'icon' => '&lt;i class="fas fa-home fa-lg"&gt;&lt;/i&gt;',
+      'title' => 'Home',
+      'target' => route('menuutils', ['type' => 'breadcrumbnav'])
+    ],
+    'link-10' => [
+      'title' => 'Second breadcrumb',
+      'target' => route('menuutils', ['type' => 'breadcrumbnav'])
+    ],
+    'link-11' => [
+      'title' => 'Third breadcrumb'
+    ],
+  ]
+]);
+```
+Array keys are used for menu element id. Values are in a sub-array.
+
+* `icon`: image or icon to be displayed in menu item. Html code. Default: unset or empty.
+* `title`:  **mandatory** element text. If icon is set, title is displayed on mouse hover.
+* `target`: link target, eg. route. Not used if `dropdown` is set. Default empty.
+* `attributes`: array of key-value pairs for additional parameters for `<a>`.
+
+## Usage
+
+In your controller, pass the result to a variable:
+
+`$breadcrumb = BreadcrumbUtils::init('myid', [...]);`
+
+Current element is always the last one. <Then pass this variable to a view:
+
+```
+return view('mybladetemplate', [
+		'breadcrumb' => $breadcrumb
+]);
+```
+
+And in your Blade template, insert your variable at the appropriate line:
+
+`{!! $breadcrumb !!}`
+
+A page can have several breadcrumbs. In this case, assign each menu to a different variable.
+
 # TabUtils
 
 ```php
@@ -151,19 +219,19 @@ This helper builds the code for tabs and tab contents.
 ## Parameters:
 * `id`: id of tab nav
 * `data`: array parameter. Content:
-* `tabs`: **mandatory** array of value to build tab items. Cf below.
-* `current`: id of menu element that is active, i.e. highlighted and open.
-* `ulclass`: class of nav tabs. Default: `nav nav-tabs`.
-* `ulattr`: array of attributes that must be added to nav main `<ul>`. Default: empty array.
-* `liclass`: class of nav element `<li>`. Default: `nav-item`.
-* `liattr`: array of attributes that must be added to nav main `<li>`. Default: empty array.
-* `btnclass`: class of element `<button>`. Default: `nav-link`.
-* `tabcontentclass`: class of tab content main `<div>`. Default: `tab-content`.
-* `maindivattr`: array of attributes that must be added to tab content main `<div>`. Default: empty array.
-* `tabdivclass`: class of tab element content `<div>`. Default: `tab-pane fade`.
-* `tabcontentattr`:  array of attributes that must be added to ab element content `<div>`. Default: empty array.
-* `activetab`: class of current tab element content. Default:  `show active`.
-* `active`: class of current item. Default: `"active"`
+	* `tabs`: **mandatory** array of value to build tab items. Cf below.
+	* `current`: id of menu element that is active, i.e. highlighted and open.
+	* `ulclass`: class of nav tabs. Default: `nav nav-tabs`.
+	* `ulattr`: array of attributes that must be added to nav main `<ul>`. Default: empty array.
+	* `liclass`: class of nav element `<li>`. Default: `nav-item`.
+	* `liattr`: array of attributes that must be added to nav main `<li>`. Default: empty array.
+	* `btnclass`: class of element `<button>`. Default: `nav-link`.
+	* `tabcontentclass`: class of tab content main `<div>`. Default: `tab-content`.
+	* `maindivattr`: array of attributes that must be added to tab content main `<div>`. Default: empty array.
+	* `tabdivclass`: class of tab element content `<div>`. Default: `tab-pane fade`.
+	* `tabcontentattr`:  array of attributes that must be added to ab element content `<div>`. Default: empty array.
+	* `activetab`: class of current tab element content. Default:  `show active`.
+	* `active`: class of current item. Default: `"active"`
 
 ## Define tab elements
 
