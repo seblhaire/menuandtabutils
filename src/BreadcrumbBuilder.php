@@ -22,7 +22,6 @@ class BreadcrumbBuilder{
               'menu' => 'is_array',
               'olattr' => 'is_array',
               'liattr' => 'is_array',
-              'aattr' => 'is_array',
               'active'=> 'is_string',
           );
           $aKeys = array_keys($checkoptions);
@@ -82,8 +81,8 @@ class BreadcrumbBuilder{
         }
         $result .= '>' . PHP_EOL;
         $result .= '<a id="' . $idx . '-link"';
-        if (count($item['aattr']) > 0){
-          foreach ($item['aattr'] as $key => $value){
+        if isset($item['attributes'] && count($item['attributes']) > 0){
+          foreach ($item['attributes'] as $key => $value){
             $result .= ' ' . $key . '="' . $value . '"';
           }
         }
