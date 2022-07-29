@@ -81,7 +81,7 @@ class BreadcrumbBuilder{
         }
         $result .= '>' . PHP_EOL;
         $result .= '<a id="' . $idx . '-link"';
-        if isset($item['attributes'] && count($item['attributes']) > 0){
+        if (isset($item['attributes']) && count($item['attributes']) > 0){
           foreach ($item['attributes'] as $key => $value){
             $result .= ' ' . $key . '="' . $value . '"';
           }
