@@ -25,8 +25,8 @@
           ],
           "aliases": {
               "MenuUtils": "Seblhaire\\MenuAndTabUtils\\MenuUtils",
-              "TabUtils" : "Seblhaire\\MenuAndTabUtils\\TabUtils",
-              "BreadcrumbUtils" : "Seblhaire\\MenuAndTabUtils\\BreadcrumbUtils"
+              "TabUtils": "Seblhaire\\MenuAndTabUtils\\TabUtils",
+              "BreadcrumbUtils": "Seblhaire\\MenuAndTabUtils\\BreadcrumbUtils"
           }
         }
     }
