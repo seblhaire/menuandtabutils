@@ -6,7 +6,6 @@ return [
   'olattr' => [],
   'liclass' => 'breadcrumb-item',
   'liattr' => [],
-  'aclass' => '',
   'aattr' => [],
   'active'=> 'active',
   'menu' => [],
