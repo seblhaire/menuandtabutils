@@ -19,7 +19,6 @@ class BreadcrumbBuilder{
             'navclass' => 'is_string',
               'olclass' => 'is_string',
               'liclass' => 'is_string',
-              'aclass' => 'is_string',
               'dropdwnclass' => 'is_string',
               'menu' => 'is_array',
               'olattr' => 'is_array',

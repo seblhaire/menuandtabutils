@@ -4,7 +4,7 @@ return [
   'ulattr' => [],
   'liclass' => 'nav-item',
   'liattr' => [],
-  'aclass' => 'nav-link',
+  'aattr' => '',
   'adroptoggle' => 'nav-link dropdown-toggle',
   'lidropdwn' => 'nav-item dropdown',
   'dropdwnmenuclass' => 'dropdown-menu',
