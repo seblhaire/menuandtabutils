@@ -16,9 +16,13 @@ class MenuServiceProvider extends ServiceProvider{
   public function register()
   {
     $this->mergeConfigFrom(__DIR__ . '/../config/menuutils.php', 'menuutils');
+    $this->mergeConfigFrom(__DIR__ . '/../config/breadcrumbutils.php', 'breadcrumbutils');
     $this->mergeConfigFrom(__DIR__ . '/../config/tabutils.php', 'tabutils');
     $this->app->bind(MenuService::class, function($app) {
           return new MenuService;
+    });
+    $this->app->bind(BreadcrumbService::class, function($app) {
+          return new BreadcrumbService;
     });
     $this->app->bind(TabService::class, function($app) {
           return new TabService;
