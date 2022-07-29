@@ -94,6 +94,7 @@ class BreadcrumbBuilder{
         }
         $result .= '</a>' . PHP_EOL . '</li>'. PHP_EOL;
       }
+      $i++;
     }
     $result .= '</ol>'. PHP_EOL . '</nav>'. PHP_EOL;
     return $result;
