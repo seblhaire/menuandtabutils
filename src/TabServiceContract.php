@@ -1,7 +1,8 @@
 <?php
+
 namespace Seblhaire\MenuAndTabUtils;
 
-interface TabServiceContract{
-  public function init($id, $data);
+interface TabServiceContract {
 
+    public function init($id, $data);
 }

@@ -1,7 +1,8 @@
 <?php
+
 namespace Seblhaire\MenuAndTabUtils;
 
-interface BreadcrumbServiceContract{
-  public function init($id, $data);
+interface BreadcrumbServiceContract {
 
+    public function init($id, $data);
 }

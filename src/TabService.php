@@ -1,9 +1,10 @@
 <?php
+
 namespace Seblhaire\MenuAndTabUtils;
 
-class TabService implements TabServiceContract{
+class TabService implements TabServiceContract {
 
-  public function init($id, $data){
-    return new TabBuilder($id, $data);
-  }
+    public function init($id, $data) {
+        return new TabBuilder($id, $data);
+    }
 }

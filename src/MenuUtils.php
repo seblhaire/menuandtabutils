@@ -1,12 +1,12 @@
-<?php namespace Seblhaire\MenuAndTabUtils;
+<?php
+
+namespace Seblhaire\MenuAndTabUtils;
 
 use Illuminate\Support\Facades\Facade;
 
-class MenuUtils extends Facade{
+class MenuUtils extends Facade {
 
-  protected static function getFacadeAccessor()
-  {
-      return MenuService::class;
-  }
-
+    protected static function getFacadeAccessor() {
+        return MenuService::class;
+    }
 }
